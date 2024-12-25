@@ -541,8 +541,9 @@
                 <div class="col-md-7 ftco-animate text-center">
                     <h2>Have a<span> Question?</span></h2>
                     <div class="que" id="send-message">
-                        <form action="https://api.web3forms.com/submit" method="POST" id="form">
-                            <input type="hidden" name="access_key" value="fca94ec1-69b8-465e-9a87-89ae6819838">
+                         
+                      <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="fca94ec1-69b8-465e-9a87-89ae68198387">
                             <input type="hidden" name="recipients" value="surajansth2061@gmail.com">
                             <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
                                 <div class="col-12">
@@ -587,6 +588,14 @@
                                 </div>
                             </div>
                         </form>
+                        <script>
+                          document.querySelector('form').addEventListener('submit', function (event) {
+                              event.preventDefault(); // Prevent default form submission for testing
+                              const formData = new FormData(event.target);
+                              console.log('Form Data Submitted:', Object.fromEntries(formData.entries()));
+                              event.target.submit(); // Continue with the actual submission
+                          });
+                      </script>
                     </div>
                 </div>
             </div>
